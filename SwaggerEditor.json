@@ -1,0 +1,491 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+	  "title": "Escuela",
+	  "version": "1.0.0"
+	},
+	"servers": [
+	  {
+		"url": "http://127.0.0.1:8000"
+	  }
+	],
+	"tags": [
+	  {
+		"name": "Alumnos"
+	  },
+	  {
+		"name": "Docentes"
+	  },
+	  {
+		"name": "Curso"
+	  },
+	  {
+		"name": "Seleccion"
+	  },
+	  {
+		"name": "Asistencia"
+	  }
+	],
+	"paths": {
+	  "/api/alumnos": {
+		"get": {
+		  "tags": ["Alumnos"],
+		  "summary": "Obtener lista de alumnos",
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/alumnos/create": {
+		"post": {
+		  "tags": ["Alumnos"],
+		  "summary": "Crear un alumno",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"nombre": "benjamin",
+					"apellido": "tavarez",
+					"email": "benjamin@gmail.com"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/alumnos/{alumno_id}": {
+		"get": {
+		  "tags": ["Alumnos"],
+		  "summary": "Obtener información de un alumno",
+		  "parameters": [
+			{
+			  "name": "alumno_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		},
+		"delete": {
+		  "tags": ["Alumnos"],
+		  "summary": "Eliminar un alumno",
+		  "parameters": [
+			{
+			  "name": "alumno_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/alumnos/update": {
+		"put": {
+		  "tags": ["Alumnos"],
+		  "summary": "Actualizar información de un alumno",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"id":"3",
+					"nombre": "benjamin",
+					"apellido": "tavarez",
+					"email": "benjamin@gmail.com",
+					"status": "a"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/docentes": {
+		"get": {
+		  "tags": ["Docentes"],
+		  "summary": "Obtener lista de docentes",
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/docentes/create": {
+		"post": {
+		  "tags": ["Docentes"],
+		  "summary": "Crear un docente",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"nombre": "benjamin",
+					"apellido": "tavarez",
+					"email": "benjamin@gmail.com"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/docentes/{docente_id}": {
+		"get": {
+		  "tags": ["Docentes"],
+		  "summary": "Obtener información de un docente",
+		  "parameters": [
+			{
+			  "name": "docente_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		},
+		"delete": {
+		  "tags": ["Docentes"],
+		  "summary": "Eliminar un docente",
+		  "parameters": [
+			{
+			  "name": "docente_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/docentes/update": {
+		"put": {
+		  "tags": ["Docentes"],
+		  "summary": "Actualizar información de un docente",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"id":"3",
+					"nombre": "benjamin",
+					"apellido": "tavarez",
+					"email": "benjamin@gmail.com",
+					"status": "a"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/cursos": {
+		"get": {
+		  "tags": ["Curso"],
+		  "summary": "Obtener lista de cursos",
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/cursos/create": {
+		"post": {
+		  "tags": ["Curso"],
+		  "summary": "Crear un curso",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"nombre": "Inteligencia Artificial",
+					"docente_id": 2
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/cursos/{curso_id}": {
+		"get": {
+		  "tags": ["Curso"],
+		  "summary": "Obtener información de un curso",
+		  "parameters": [
+			{
+			  "name": "curso_id",
+			  "in": "path",
+			  "description":"",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		},
+		"delete": {
+		  "tags": ["Curso"],
+		  "summary": "Eliminar un curso",
+		  "parameters": [
+			{
+			  "name": "curso_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/cursos/update": {
+		"put": {
+		  "tags": ["Curso"],
+		  "summary": "Actualizar información de un curso",
+		  "parameters": [
+			{
+			  "name": "curso_id",
+			  "in": "path",
+			  "required": true,
+			  "schema": {
+				"type": "integer"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"id":"3",
+					"nombre": "benjamin",
+					"apellido": "tavarez",
+					"email": "benjamin@gmail.com",
+					"status": "a"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/alumnos/seleccion": {
+		"post": {
+		  "tags": ["Seleccion"],
+		  "summary": "Crear una selección de alumno y curso",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"alumno_id": "1",
+					"curso_id": "5"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		},
+		"delete": {
+		  "tags": ["Seleccion"],
+		  "summary": "Eliminar una selección de alumno y curso",
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  },
+	  "/api/seleccion/asistencia": {
+		"post": {
+		  "tags": ["Asistencia"],
+		  "summary": "Crear registro de asistencia",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"alumno_id": "2",
+					"curso_id": "2",
+					"dia": "2023/07/23",
+					"abreviacion": "f"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		},
+		"put": {
+		  "tags": ["Asistencia"],
+		  "summary": "Actualizar registro de asistencia",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "type": "object",
+				  "example": {
+					"alumno_id": "2",
+					"curso_id": "2",
+					"dia": "2023/07/23",
+					"abreviacion": "f"
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {
+			"200": {
+			  "description": "Respuesta exitosa",
+			  "content": {
+				"application/json": {}
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+  
